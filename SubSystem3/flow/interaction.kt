@@ -49,6 +49,11 @@ val HandGesture = state(Greetings) {
         furhat.say("This is E")
         furhat.ask("Which other gesture do you want to show?")
     }
+
+    onResponse<RegisterGestureF> {
+        furhat.say("This is F")
+        furhat.ask("Which other gesture do you want to show?")
+    }
 }
 
 

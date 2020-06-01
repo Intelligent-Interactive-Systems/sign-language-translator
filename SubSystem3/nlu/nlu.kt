@@ -1,12 +1,33 @@
 package furhatos.app.videoskill.nlu
 
-import furhatos.nlu.ComplexEnumEntity
 import furhatos.nlu.EnumEntity
 import furhatos.nlu.Intent
-import furhatos.nlu.ListEntity
-import furhatos.nlu.common.Number
 import furhatos.util.Language
 
+
+class VoiceList : EnumEntity( stemming = true, speechRecPhrases = true){
+    override fun getEnum(lang: Language): List<String> {
+        return listOf ( "voice")
+    }
+}
+
+class RegisterVoice(val voice: VoiceList? = null): Intent(){
+    override fun getExamples(lang: Language): List<String> {
+        return listOf("@voice", "I want @voice", "Detect by @voice", "i want @voice")
+    }
+}
+
+class GestureList : EnumEntity( stemming = true, speechRecPhrases = true){
+    override fun getEnum(lang: Language): List<String> {
+        return listOf ( "gesture")
+    }
+}
+
+class RegisterGesture(val gesture: GestureList? = null): Intent(){
+    override fun getExamples(lang: Language): List<String> {
+        return listOf("@gesture", "I want @gesture", "Detect by @gesture", "i want @gesture")
+    }
+}
 
 class GestureListA : EnumEntity( stemming = true, speechRecPhrases = true){
     override fun getEnum(lang: Language): List<String> {
@@ -74,7 +95,7 @@ class GestureListF : EnumEntity( stemming = true, speechRecPhrases = true){
     }
 }
 
-class RegisterGestureF(val ges: GestureListE? = null): Intent(){
+class RegisterGestureF(val ges: GestureListF? = null): Intent(){
     override fun getExamples(lang: Language): List<String> {
         return listOf("@ges", "These are @ges", "i have @ges", "there are @ges")
     }

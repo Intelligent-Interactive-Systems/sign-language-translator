@@ -1,6 +1,6 @@
 package furhatos.app.videoskill.flow
 
-import furhatos.app.iisembodiment.flow.Greetings
+import furhatos.app.videoskill.flow.Greetings
 import furhatos.app.videoskill.nlu.*
 import furhatos.flow.kotlin.*
 import furhatos.gestures.Gestures
@@ -17,7 +17,7 @@ val Start : State = state(Greetings) {
 
     onResponse<Yes>{
         furhat.say("Welcome")
-  //      furhat.ask("Do you want the sign detection by voice or gesture input")
+        //      furhat.ask("Do you want the sign detection by voice or gesture input")
         maint()
         furhat .gesture(Gestures.Smile( duration= 2.0 , strength = 1.0 ))
     }
@@ -42,9 +42,9 @@ fun FlowControlRunner.maint() {
     val number1 = Scanner(System.`in`)
     print("Enter an integer: ")
 
-        var Index: Int = number1.nextInt()
-        var temp = Index
-        delay(4000)
+    var Index: Int = number1.nextInt()
+    var temp = Index
+    delay(4000)
     print("Enter an integer: ")
 
     var Index2 = number1.nextInt()

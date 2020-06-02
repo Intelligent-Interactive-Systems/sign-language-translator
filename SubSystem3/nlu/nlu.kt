@@ -7,7 +7,7 @@ import furhatos.util.Language
 
 class VoiceList : EnumEntity( stemming = true, speechRecPhrases = true){
     override fun getEnum(lang: Language): List<String> {
-        return listOf ( "voice")
+        return listOf ("voice")
     }
 }
 
